@@ -35,7 +35,7 @@ xMenu.onclick = () => { //ocultar menu pelo X
 copyLinkIcon.onclick = () => { // Usando a API de área de transferência para copiar o texto
 
     // Texto que você deseja copiar
-    const textoCopiar = 'https://ezequiellsantos.github.io/JavaScript/desafios/d015/';
+    const textoCopiar = 'https://ezequiellsantos.github.io/Direct-By-Kiel/';
 
     // Criando um elemento oculto para copiar
     const input = document.createElement('input');
