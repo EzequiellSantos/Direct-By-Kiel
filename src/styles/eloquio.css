@@ -64,10 +64,16 @@ article.article-content{
     box-shadow: 3px 3px 1px var(--color-background02);
 }
 
-article.article-content  > p, h4{
+article.article-content  > p{
     margin: 15px 20px;
     letter-spacing: 1px;
     line-height: 2em;
+}
+
+article.article-content  > h4{
+    margin:40px 20px 0 20px;
+    letter-spacing: 1px;
+    line-height: 1em;
 }
 
 span#quote{
@@ -135,4 +141,24 @@ button#toHome > img{
 button#toHome:active{
     transform: scale(1.1);
     transition: all 0.2s ease;
+}
+
+#video{
+    margin: auto;
+    width: calc(100% - 80px);
+    background-color: var(--color-background00);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light #video{
+    background-color: #f8f8f8;
+}
+
+#video > iframe{
+    width: 100%;
+    border-radius: 12px;
 }
