@@ -7,30 +7,30 @@ function adequarImagens(tema) {// adequa as imagens ao tema
 
 window.addEventListener('scroll', function() { // função para esconder ou mostrar o header
 
-    var elementoSticky = document.getElementById('eloquio-header');
-    var scrollTop = window.scrollY;
-  
-    if (scrollTop > 40) {  // verificando o quanto ja foi rolado a página para baixo
+  var elementoSticky = document.getElementById('eloquio-header');
+  var scrollTop = window.scrollY;
 
-      elementoSticky.classList.add('oculto'); // deixar o header iculto
+  if (scrollTop > 40) {  // verificando o quanto ja foi rolado a página para baixo
 
-    } else {
+    elementoSticky.classList.add('oculto'); // deixar o header iculto
 
-      elementoSticky.classList.remove('oculto'); // mostra o header
+  } else {
 
-    }
+    elementoSticky.classList.remove('oculto'); // mostra o header
+
+  }
 
 
-    var rolarParaCima = this.document.getElementById('toTop')
-    rolarParaCima.style.opacity = this.window.scrollY > 1200 ? '1' : '0'
+  var rolarParaCima = this.document.getElementById('toTop')
+  rolarParaCima.style.opacity = this.window.scrollY > 1200 ? '1' : '0'
 
 });
 
 toTop.onclick = () => { // funçãi para quando clicar no botao, levar o usuário para o topo da página
 
-    window.scrollTo({
-        top: 100,
-        behavior: 'smooth'
-    })
+  window.scrollTo({
+      top: 100,
+      behavior: 'smooth'
+  })
 
 }

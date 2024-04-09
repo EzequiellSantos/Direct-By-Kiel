@@ -37,7 +37,6 @@ header.eloquio-header > nav#toggle-theme{
 main.cards-content{
     width: calc(100% - 10px);
     max-width: 600px;
-    max-width: 600px;
 
     margin: auto;
     margin-top: 10px;

@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Aplicação dos estilos iniciais
     aplicarTema(temaPreferido);
 
-
     // Mudando e Guardando o tema escolhido
     toggleSection.onclick = () => {
 
@@ -55,7 +54,6 @@ function atualizarSecondDisplay() { // função pra preenchimento correto do seg
 
     //var formatedNumDig = formatedNumbers(Number(numerosDigitados))
 
-
     if (numerosDigitados !== '' && operador == '') {//apenas os numeros digitados sem o resultado e sem o operador
 
         secondInput.value = '= ' + parseFloat(numerosDigitados)
@@ -80,7 +78,7 @@ function atualizarSecondDisplay() { // função pra preenchimento correto do seg
 
 }
 
-function formatedNumbers(numero){
+function formatedNumbers(numero){// função para adicionar separador de milhar
 
     //return numero.toFixed(1).replace(/\./g, ',').replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
@@ -104,7 +102,7 @@ function validacaoEntradasDeDados() { // função para verificar divisões errad
 
 function mostrarResultadoAntecipado() { // quando acontecer qualquer operação, mesmo sem apertar igual deve aparecer o resultado no segundo display
 
-    if (numerosDigitados !== '' && resultadoFinal == 0) { //  resultado parcial será calculado com o operador definido mais os resultados das contas das arrays feito a conta com os numeros digitados
+    if (numerosDigitados !== '' && resultadoFinal == 0) { //  resultado parcial é calculado com o operador definido junto aos numeros presentes
 
         if (operador == ultimoOperador) { // caso o o antigo operador seja igual ao novo digitado pelo user
 
@@ -237,7 +235,6 @@ function verficandoMeuAmorzinho() { // função para evitar erros ao tentar dar 
     }
 
 }
-
 
 function addNumber(number) { // função de adicionar numeros
 
@@ -1010,7 +1007,6 @@ function contarDecimais(number) { // contagem de quantos numeros decimais ha dep
 
     return comprimentoDecimal
 
-
 }
 
 function checkDisplays() { //quando o usuário entrar na página ou limpar o input
@@ -1086,7 +1082,6 @@ function inverterStyles() { // add estilos quando apertar igual
     secondInput.classList.add('primeiro')
     secondInput.classList.remove('segundo')
 
-
 }
 
 function reporStyles() { // repoe os estilos iniciais
@@ -1110,8 +1105,10 @@ function limparArrays() { // limpa as arrays com resultados
 }
 
 function tst(inputValue) {
+
     firstInput.value = inputValue
     atualizarFirstDisplay()
     atualizarSecondDisplay()
     mostrarResultadoAntecipado()
+
 }

@@ -176,7 +176,6 @@ switch (month) {
 
 document.getElementById("date").innerHTML = `<p>${day} ${dayMonth} de ${month} ${year}</p>`
 
-
 function atualizarRelogio() { //exibição do relógio com horas, minutos e segundos
 
     const now = new Date();
@@ -188,7 +187,7 @@ function atualizarRelogio() { //exibição do relógio com horas, minutos e segu
 
 }
 
- /* 
+/* 
 
     configurações para otimização da página e evitar lentidão e excesso de memória utilizada
     pelo navegador 
@@ -288,7 +287,6 @@ document.addEventListener('DOMContentLoaded', function () {
         temaEstilos.dataset.tema = tema;
 
     }
-
 
 });
 
