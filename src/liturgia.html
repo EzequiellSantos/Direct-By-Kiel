@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://raw.githubusercontent.com/EzequiellSantos/JavaScript/main/desafios/d015/Imagens/Favicon-Direct/direct-icon-96.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="styles/liturgia.css">
+    <link rel="stylesheet" href="styles/style.css" id="tema-estilos">
+    <link rel="stylesheet" href="styles/animations.css" id="tema-estilos">
+    <link rel="stylesheet" href="styles/printLiturgy.css" media="print">
+    <title>Liturgia Diaria Direct</title>
+</head>
+
+<body>
+
+    
+    <header id="liturgia-header" class="liturgia-header">
+
+        <nav id="nav-toBack">
+
+            <menu>
+
+                <a href="index.html" target="_self" rel="prev">
+
+                    <button id="toHome">
+                        <img id="toBack" src="" alt="seta-voltar">
+                    </button>
+
+                </a>
+
+            </menu>
+
+        </nav>
+
+        <section id="section-date">
+
+            <h2 id="date"></h2>
+
+        </section>
+
+        <aside id="aside-tempo">
+
+            <p id="tempoLiturgico"></p>
+
+        </aside>
+
+        <nav id="toggle-theme">
+
+            <div id="toggle-icon">
+
+                <div id="item" class="">
+                    <i id="icon00"></i>
+                    <i id="icon01"></i>
+                    <i id="icon02"></i>
+                    <i id="icon03"></i>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <nav id="leituras">
+
+            <ul id="menuLeituras">
+                <li id="liOneLeitura"></li>
+                <li id="Salmos"></li>
+                <li id="liTwoLeitura"></li>
+                <li id="liEvangelho"></li>
+            </ul>
+            <div id="background"></div>
+
+        </nav>
+
+        
+
+    </header>
+
+    <main id="container" class="loader">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <article id="texto"></article>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+
+    <script src="scripts/liturgiaScript.js" defer></script>
+    <script src="scripts/aplicartema.js"></script>
+
+
+</body>
+
+</html>

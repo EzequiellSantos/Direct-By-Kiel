@@ -1,0 +1,37 @@
+body{
+    background-color: transparent;
+}
+
+#nav-toBack{
+    display: none;
+}
+
+#toggle-theme{
+    display: none;
+}
+
+#toggle-icon{
+    display: none;
+}
+
+header#liturgia-header{
+    background-color: transparent;
+    height: 50px;
+}
+
+#texto{
+    font-size: 1.0em;
+    line-height: 1.0em;
+}
+
+ul#menuLeituras > li{
+    display: none;
+}
+
+/* footer::after{
+    content: 'https://ezequiellsantos.github.io/Direct-By-Kiel/liturgia.html';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}  */

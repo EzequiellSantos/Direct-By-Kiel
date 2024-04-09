@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+header#liturgia-header {
+    position: sticky;
+    top: 10px;
+    width: calc(100% - 16px);
+    max-width: 600px;
+    height: 140px;
+    left: 10px;
+    margin: auto;
+    margin-top: 10px;
+    color: #fff;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 1fr 1fr;
+    justify-items: center;
+}
+
+.light header#liturgia-header{
+    color: #000;
+}
+
+nav#nav-toBack{
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+
+button#toHome {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-top: 0px;
+    margin-left: -20px;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background-color: #000f2560;
+}
+
+.light button#toHome {
+    background-color: #ffffff98;
+}
+
+button#toHome>img {
+    width: 40px;
+    height: 40px;
+}
+
+button#toHome:active {
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+header > nav#toggle-theme {
+    margin: 18px 21px 0 0;
+    grid-column: 5/6;
+    grid-row: 1/1 ;
+}
+
+#section-date{
+    grid-column: 1/6;
+    grid-row: 1/2;
+
+    font-size: 1.2em;
+}
+
+#aside-tempo{
+    grid-column: 1/6;
+    grid-row: 2/4;
+    margin-top: -13px;
+    font-size: 1.2em;
+}
+
+#leituras{
+    position: absolute;
+    width: calc(100% - 16px);
+    max-width: 600px;
+    bottom: 13px;
+    margin: auto;
+}
+
+ul#menuLeituras{
+    list-style: none;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+ul#menuLeituras > li{
+    display: inline;
+    font-family: var(--font-normal-sans);
+    font-size: clamp(0.84375rem, 0.7668rem + 0.3731vw, 1rem);
+    margin: 0px 5px -3px 5px;
+    width: 70px;
+    height: 100%;
+    padding: 0 4px;
+    text-align: center;
+    z-index: 3;
+}
+
+#background{
+    position: absolute;
+    bottom: -13px;
+    z-index: 2;
+    background-color: var(--color-background00);
+    min-width: 60px;
+    height: 37px;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    transition: left 0.455s ease-in-out;
+}
+
+.light #background{
+    background-color: #fff;
+}
+
+#date{
+    font-family: var(--font-number);
+    font-weight: normal;
+    font-size: clamp(1.5rem, 1.3712rem + 0.6061vw, 1.75rem);
+}
+
+#tempoLiturgico{
+    font-family: var(--font-fil-itali);
+    font-size: clamp(0.875rem, 0.7519rem + 0.597vw, 1.125rem);
+    max-width: 450px;
+}
+
+#texto{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(1.0625rem, 0.9952rem + 0.3077vw, 1.1875rem);
+
+    width: calc(100% - 16px);
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 20px;
+
+    animation: load 0.5s ease-in infinite;
+}
+
+main.loader{
+    gap: 0.25rem;
+}
+
+.loader .child{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    animation: carre 0.5s infinite alternate;
+
+    background-color: var(--color-background03);
+}
+
+.dark .child{
+    background-color: var(--color-background01);
+}
+
+.loader .child:nth-child(2){
+    left: 50%;
+    animation-delay: 100ms;
+}
+
+.loader .child:nth-child(3){
+    left: 55%;
+    animation-delay: 200ms;
+}
+
+.light #texto{
+    color: #000;
+}
+
+#texto > p{
+    margin: 20px 0;
+    letter-spacing: 0.08em;
+    line-height: 1.7em;
+}
+
+@media (880 <= width) {
+    #texto > p {
+        letter-spacing: 0.05em;
+        line-height: 1.5em;
+    }
+}
+
+@keyframes carre {
+    to{
+        translate: 0 -0.34rem;
+    }
+}

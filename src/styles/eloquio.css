@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+header.eloquio-header{
+    position: sticky;
+    top: 10px;
+    width: calc(100% - 16px);
+    max-width: 600px;
+    left: 10px;
+    height: 50px;
+    margin: auto;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header.eloquio-header.oculto {
+    opacity: 0;
+}
+
+a{
+    margin: 0;
+    margin-top: 15px;
+}
+
+.light a{
+    color: #000;
+}
+
+header.eloquio-header > nav#toggle-theme{
+    margin-top: 15px;
+}
+
+main.cards-content{
+    width: calc(100% - 10px);
+    max-width: 600px;
+    max-width: 600px;
+
+    margin: auto;
+    margin-top: 10px;
+    height: auto;
+
+    text-align: justify;
+}
+
+article.article-content{
+    background-color: var(--color-background01);
+    color: #fff;
+    font-family: var(--font-number);
+    width: calc(100% - 30px);
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+
+    box-shadow: 3px 3px 1px var(--color-light02);
+}
+
+.light article.article-content{
+    background-color: var(--color-background03);
+    color: #000;
+    box-shadow: 3px 3px 1px var(--color-background02);
+}
+
+article.article-content  > p, h4{
+    margin: 15px 20px;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+span#quote{
+    display: block;
+    text-align: left;
+    border-left: 4px solid #838383;
+    border-radius: 5px;
+    background-color: #94949431;
+    margin: 15px 0px 40px 0px;
+    padding: 2px 5px 2px 20px;
+}
+
+span#enfase{
+    background-color: #838383;
+    text-decoration: bold;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.light span#enfase{
+    background-color: #949494;
+    color: #fff;
+}
+
+button#toTop{
+    opacity: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 30px;
+    bottom: 30px;
+    left: 13px;
+    border-radius: 50%;
+
+    border: none;
+    outline: none;
+    transition: opacity 0.5s ease-in-out;
+    background-color: transparent;
+}
+
+#toTop > img{
+    width: 55px;
+}
+
+button#toHome{
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-left: -35px;
+    padding: 4px;
+    width: 48px;
+    height: 48px;
+    background-color: #000f2560;
+}
+
+.light button#toHome{
+    background-color: #ffffff98;
+}
+
+button#toHome > img{
+    width: 40px;
+    height: 40px;
+}
+
+button#toHome:active{
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
