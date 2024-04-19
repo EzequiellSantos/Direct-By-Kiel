@@ -68,7 +68,7 @@ header > nav#toggle-theme {
     font-size: 1.2em;
 }
 
-#aside-tempo{
+#aside-tempo-liturgico{
     grid-column: 1/6;
     grid-row: 2/4;
     margin-top: -13px;
@@ -135,10 +135,13 @@ ul#menuLeituras > li{
 
 #texto{
     color: #fff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(1.0625rem, 0.9952rem + 0.3077vw, 1.1875rem);
+    font-size: 1.1em; 
+    letter-spacing: 0.05em;
+    line-height: 2em;
 
-    width: calc(100% - 16px);
+    width: calc(100% - 19px);
     max-width: 600px;
     margin: auto;
     padding-bottom: 20px;
@@ -182,14 +185,15 @@ main.loader{
 
 #texto > p{
     margin: 20px 0;
-    letter-spacing: 0.08em;
-    line-height: 1.7em;
+
 }
 
-@media (880 <= width) {
-    #texto > p {
+@media (880px <= width) {
+    #texto{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.25em;
         letter-spacing: 0.05em;
-        line-height: 1.5em;
+        line-height: 1.9em;
     }
 }
 
