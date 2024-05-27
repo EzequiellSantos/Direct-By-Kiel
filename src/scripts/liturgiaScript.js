@@ -48,7 +48,7 @@ function menuBackgroundInitial(liFirstReading) {
 
 }
 
-const url = 'https://intermediary-api.vercel.app/api'
+const url = 'https://liturgiadiaria.site/'
 
 fetch(url)
     .then(response => response.json())
@@ -56,35 +56,56 @@ fetch(url)
         coletarLeiturasAPI(data)
         menuBackgroundInitial(liFirstReading)
         exibirLoad()
+
+        console.log(data);
     })
     .catch(error => {
         console.error('Erro ao com a API; ', error);
     })
 
-var leituras = {
-    firstLi: '',
-    salmos: '',
-    secondli: '',
-    evangelho: ''
+var textos = {
+    leituras: {
+        salmos: '',
+        firstLi: '',
+        secondli: '',
+        evangelho: ''
+    },
+    titulos: {
+        dayTitle: '',
+        data: '',
+        evangelhoTitle: '',
+        firstLiTitle: '',
+        secondliTitle: '',
+        salmosTitle:'',
+        
+    },
+    referencias: {
+        evangelhoRef: '',
+        firstLiRef: '',
+        secondliRef: '',
+        salmosRef:'',
+    }
 }
 
 function coletarLeiturasAPI(dados) {
 
-    date.innerHTML = dados.today.date
+    date.innerHTML = dados.data
 
-    tempoLiturgico.innerHTML = dados.today.entry_title
+    tempoLiturgico.innerHTML = dados.liturgia
 
     // first reading
-    leituras.firstLi = dados.today.readings.first_reading.all_html
+    textos.leituras.firstLi = dados.primeiraLeitura.texto
+    textos.titulos.firstLiTitle = dados.primeiraLeitura.titulos
+    textos.referencias.firstLiRef = dados.primeiraLeitura.referencia
 
     // salmos
-    leituras.salmos = dados.today.readings.psalm.all_html
+    textos.leituras.salmos = dados.salmo.texto
 
     // second reading
-    if (dados.today.readings.hasOwnProperty('second_reading')) {
+    if (dados.hasOwnProperty('segundaLeitura')) {
 
         liSecondReading.style.display = 'block'
-        leituras.secondli = dados.today.readings.second_reading.all_html
+        textos.leituras.secondli = dados.segundaLeitura.texto
 
     } else {
 
@@ -94,7 +115,7 @@ function coletarLeiturasAPI(dados) {
     }
 
     // gospel
-    leituras.evangelho = dados.today.readings.gospel.all_html
+    textos.leituras.evangelho = dados.evangelho.texto
 
     // create first reading
     gerarPrimeiraLeitura()
@@ -111,21 +132,21 @@ var containerTexto = document.getElementById('texto')
 var liSecondReading = document.getElementById('liTwoLeitura')
 liSecondReading.onclick = () => {
 
-    containerTexto.innerHTML = leituras.secondli
+    containerTexto.innerHTML = textos.leituras.secondli
 
 }
 
 var liSalmos = document.getElementById('Salmos')
 liSalmos.onclick = () => {
 
-    containerTexto.innerHTML = leituras.salmos
+    containerTexto.innerHTML = textos.leituras.salmos
 
 }
 
 var liEvangelho = document.getElementById('liEvangelho')
 liEvangelho.onclick = () => {
 
-    containerTexto.innerHTML = leituras.evangelho
+    containerTexto.innerHTML = textos.leituras.evangelho
 
 }
 
@@ -138,7 +159,7 @@ liFirstReading.onclick = () => {
 
 function gerarPrimeiraLeitura() {
 
-    containerTexto.innerHTML = leituras.firstLi
+    containerTexto.innerHTML = textos.leituras.firstLi
 
 }
 
