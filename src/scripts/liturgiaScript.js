@@ -57,7 +57,7 @@ fetch(url)
         menuBackgroundInitial(liFirstReading)
         exibirLoad()
 
-        console.log(data);
+        console.log(data.evangelho.texto);
     })
     .catch(error => {
         console.error('Erro ao com a API; ', error);
@@ -102,7 +102,7 @@ function coletarLeiturasAPI(dados) {
     textos.leituras.salmos = dados.salmo.texto
 
     // second reading
-    if (dados.hasOwnProperty('segundaLeitura')) {
+    if (dados.segundaLeitura != 'Não há segunda leitura hoje!') {
 
         liSecondReading.style.display = 'block'
         textos.leituras.secondli = dados.segundaLeitura.texto
