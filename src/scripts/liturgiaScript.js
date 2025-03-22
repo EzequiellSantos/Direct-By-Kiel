@@ -48,16 +48,20 @@ function menuBackgroundInitial(liFirstReading) {
 
 }
 
-const url = 'https://liturgiadiaria.site/'
+var data = new Date()
+var dia = data.getDay()
+var mes = data.getMonth()
+var ano = data.getFullYear()
+
+const url = `https://liturgia.up.railway.app/`
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         coletarLeiturasAPI(data)
         menuBackgroundInitial(liFirstReading)
         exibirLoad()
-
-        console.log(data.evangelho.texto);
     })
     .catch(error => {
         console.error('Erro ao com a API; ', error);
@@ -76,7 +80,7 @@ var textos = {
         evangelhoTitle: '',
         firstLiTitle: '',
         secondliTitle: '',
-        salmosTitle:'',
+        salmosRefrao:'',
         
     },
     referencias: {
@@ -95,17 +99,21 @@ function coletarLeiturasAPI(dados) {
 
     // first reading
     textos.leituras.firstLi = dados.primeiraLeitura.texto
-    textos.titulos.firstLiTitle = dados.primeiraLeitura.titulos
+    textos.titulos.firstLiTitle = dados.primeiraLeitura.titulo
     textos.referencias.firstLiRef = dados.primeiraLeitura.referencia
 
     // salmos
     textos.leituras.salmos = dados.salmo.texto
+    textos.titulos.salmosRefrao = dados.salmo.refrao
+    textos.referencias.salmosRef = dados.salmo.referencia
 
     // second reading
     if (dados.segundaLeitura != 'Não há segunda leitura hoje!') {
 
         liSecondReading.style.display = 'block'
         textos.leituras.secondli = dados.segundaLeitura.texto
+        textos.titulos.secondliTitle = dados.segundaLeitura.titulos
+        textos.referencias.secondliRef = dados.segundaLeitura.referencia
 
     } else {
 
@@ -116,6 +124,8 @@ function coletarLeiturasAPI(dados) {
 
     // gospel
     textos.leituras.evangelho = dados.evangelho.texto
+    textos.titulos.evangelhoTitle = dados.evangelho.titulo
+    textos.referencias.evangelhoRef = dados.evangelho.referencia
 
     // create first reading
     gerarPrimeiraLeitura()
@@ -132,21 +142,33 @@ var containerTexto = document.getElementById('texto')
 var liSecondReading = document.getElementById('liTwoLeitura')
 liSecondReading.onclick = () => {
 
-    containerTexto.innerHTML = textos.leituras.secondli
+    containerTexto.innerHTML = containerTexto.innerHTML = `
+    <h3><strong>Segunda Leitura${textos.referencias.firstLiRef}</strong</h2>
+    <p>${textos.titulos.firstLiTitle}</p>
+    <p>${textos.leituras.firstLi}</p>`
 
 }
 
 var liSalmos = document.getElementById('Salmos')
 liSalmos.onclick = () => {
 
-    containerTexto.innerHTML = textos.leituras.salmos
+    let textoModificado = textos.leituras.salmos.replaceAll("—", "<br><br>—")
+
+    containerTexto.innerHTML = `
+    <h3>Responsório ${textos.referencias.salmosRef}</h3>
+    <p>— ${textos.titulos.salmosRefrao}</p>
+    <p>— <strong>${textos.titulos.salmosRefrao}</strong> ${textoModificado}</p>`
 
 }
 
 var liEvangelho = document.getElementById('liEvangelho')
 liEvangelho.onclick = () => {
 
-    containerTexto.innerHTML = textos.leituras.evangelho
+    containerTexto.innerHTML = containerTexto.innerHTML = `
+    <h3>${textos.referencias.evangelhoRef}</h3>
+    <strong><p>${textos.titulos.evangelhoTitle}</p></strong>
+    <p>${textos.leituras.evangelho}</p>`
+
 
 }
 
@@ -159,7 +181,11 @@ liFirstReading.onclick = () => {
 
 function gerarPrimeiraLeitura() {
 
-    containerTexto.innerHTML = textos.leituras.firstLi
+    containerTexto.innerHTML = containerTexto.innerHTML = `
+    <h3><strong>Primeira Leitura (${textos.referencias.firstLiRef})</strong></h3>
+    <p>${textos.titulos.firstLiTitle}</p>
+    <p>${textos.leituras.firstLi}</p>`
+
 
 }
 
