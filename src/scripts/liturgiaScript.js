@@ -48,7 +48,7 @@ function menuBackgroundInitial(liFirstReading) {
 
 }
 
-var data = new Date()
+var data = new Date() 
 var dia = data.getDay()
 var mes = data.getMonth()
 var ano = data.getFullYear()
@@ -58,7 +58,6 @@ const url = `https://liturgia.up.railway.app/`
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         coletarLeiturasAPI(data)
         menuBackgroundInitial(liFirstReading)
         exibirLoad()
@@ -145,7 +144,9 @@ liSecondReading.onclick = () => {
     containerTexto.innerHTML = containerTexto.innerHTML = `
     <h3><strong>Segunda Leitura${textos.referencias.firstLiRef}</strong</h2>
     <p>${textos.titulos.firstLiTitle}</p>
-    <p>${textos.leituras.firstLi}</p>`
+    <p>${textos.leituras.firstLi}</p>
+    <p>- Palavra do Senhor.</p>
+    <p><strong>- Graças a Deus</strong></p>`
 
 }
 
@@ -165,8 +166,9 @@ var liEvangelho = document.getElementById('liEvangelho')
 liEvangelho.onclick = () => {
 
     containerTexto.innerHTML = containerTexto.innerHTML = `
-    <h3>${textos.referencias.evangelhoRef}</h3>
-    <strong><p>${textos.titulos.evangelhoTitle}</p></strong>
+    <h3>Evangelho (${textos.referencias.evangelhoRef})</h3>
+    <p>${textos.titulos.evangelhoTitle}</p>
+    <p><strong>- Glória a vós Senhor</strong></p>
     <p>${textos.leituras.evangelho}</p>`
 
 
@@ -184,7 +186,9 @@ function gerarPrimeiraLeitura() {
     containerTexto.innerHTML = containerTexto.innerHTML = `
     <h3><strong>Primeira Leitura (${textos.referencias.firstLiRef})</strong></h3>
     <p>${textos.titulos.firstLiTitle}</p>
-    <p>${textos.leituras.firstLi}</p>`
+    <p>${textos.leituras.firstLi}</p>
+    <p>- Palavra do Senhor.</p>
+    <p><strong>- Graças a Deus</strong></p>`
 
 
 }
