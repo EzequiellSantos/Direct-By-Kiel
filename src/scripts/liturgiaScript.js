@@ -142,9 +142,9 @@ var liSecondReading = document.getElementById('liTwoLeitura')
 liSecondReading.onclick = () => {
 
     containerTexto.innerHTML = containerTexto.innerHTML = `
-    <h3><strong>Segunda Leitura${textos.referencias.firstLiRef}</strong</h2>
-    <p>${textos.titulos.firstLiTitle}</p>
-    <p>${textos.leituras.firstLi}</p>
+    <h3><strong>Segunda Leitura (${textos.referencias.secondLiRef})</strong></h2>
+    <p>${textos.titulos.secondLiTitle}</p>
+    <p>${textos.leituras.secondLi}</p>
     <p>- Palavra do Senhor.</p>
     <p><strong>- Graças a Deus</strong></p>`
 
