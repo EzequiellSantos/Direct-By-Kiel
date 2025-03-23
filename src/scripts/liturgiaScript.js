@@ -111,7 +111,7 @@ function coletarLeiturasAPI(dados) {
 
         liSecondReading.style.display = 'block'
         textos.leituras.secondli = dados.segundaLeitura.texto
-        textos.titulos.secondliTitle = dados.segundaLeitura.titulos
+        textos.titulos.secondliTitle = dados.segundaLeitura.titulo
         textos.referencias.secondliRef = dados.segundaLeitura.referencia
 
     } else {
@@ -146,7 +146,7 @@ liSecondReading.onclick = () => {
     <p>${textos.titulos.secondliTitle}</p>
     <p>${textos.leituras.secondli}</p>
     <p>- Palavra do Senhor.</p>
-    <p><strong>- Graças a Deus</strong></p>`
+    <p><strong>- Graças a Deus.</strong></p>`
 
 }
 
@@ -169,7 +169,9 @@ liEvangelho.onclick = () => {
     <h3>Evangelho (${textos.referencias.evangelhoRef})</h3>
     <p>${textos.titulos.evangelhoTitle}</p>
     <p><strong>- Glória a vós Senhor</strong></p>
-    <p>${textos.leituras.evangelho}</p>`
+    <p>${textos.leituras.evangelho}</p>
+    <p>- Palavra da Salvação.</p>
+    <p><strong>- Glória a vós, Senhor.</strong></p>`
 
 
 }
@@ -188,7 +190,7 @@ function gerarPrimeiraLeitura() {
     <p>${textos.titulos.firstLiTitle}</p>
     <p>${textos.leituras.firstLi}</p>
     <p>- Palavra do Senhor.</p>
-    <p><strong>- Graças a Deus</strong></p>`
+    <p><strong>- Graças a Deus.</strong></p>`
 
 
 }
