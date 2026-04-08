@@ -53,7 +53,7 @@ var dia = data.getDay()
 var mes = data.getMonth()
 var ano = data.getFullYear()
 
-const url = `https://liturgia.up.railway.app/`
+const url = `https://intermediary-api.vercel.app/api`
 
 fetch(url)
     .then(response => response.json())
